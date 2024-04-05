@@ -33,18 +33,18 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend clickviral-frontend
+frontend sksallah45-frontend
         bind *:80
         mode http
         http-request set-header X_Forwarded-Proto http
-        default_backend clickviral-backend
+        default_backend sksallah45-backend
 
-frontend clickviral-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/www.clickviral.tech.pem
+frontend sksallah45-frontend-https
+        bind *:443 ssl crt /etc/haproxy/certs/www.sksallah45.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend clickviral-backend
+        default_backend sksallah45-backend
 
-backend clickviral-backend
+backend sksallah45-backend
         balance roundrobin
-        server 157092-web-01 18.234.192.173 check
-        server 157092-web-02 100.25.46.235 check
+        server 157092-web-01 35.153.17.125:80 check
+        server 157092-web-02 34.207.211.97:80 check
