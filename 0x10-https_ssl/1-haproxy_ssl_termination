@@ -40,7 +40,7 @@ frontend sksallah45-frontend
         default_backend sksallah45-backend
 
 frontend sksallah45-frontend-https
-        bind *:443 ssl crt /etc/haproxy/certs/www.sksallah45.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/sksallah45.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend sksallah45-backend
 

@@ -40,7 +40,7 @@ frontend sksallah45-frontend
         http-request set-header X_Forwarded-Proto http
         default_backend sksallah45-backend
 
-frontend clickviral-frontend-https
+frontend sksallah45-frontend-https
         bind *:443 ssl crt /etc/haproxy/certs/sksallah45.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend sksallah45-backend
