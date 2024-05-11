@@ -3,13 +3,13 @@
 
 import requests
 
-def top_ten(subreddit):
+def number_of_subscribers(subreddit):
     # Reddit API endpoint for getting hot posts in a subreddit
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=10"
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    url = "https://www.reddit.com/r/{subreddit}/hot.json".format(subreddit)
+    headers = {"User-Agent": "Mozilla/5.0"}
 
     # Send a GET request to the Reddit API
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     # Check if the response is successful (status code 200)
     if response.status_code == 200:
